@@ -1,0 +1,78 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Tìm kiếm phim</title>-->
+<!--    &lt;!&ndash; Thêm Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Thêm custom CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            padding-top: 40px;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 800px;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            margin-bottom: 30px;-->
+<!--        }-->
+<!--        .btn-primary {-->
+<!--            background-color: #007bff;-->
+<!--            border: none;-->
+<!--        }-->
+<!--        .btn-primary:hover {-->
+<!--            background-color: #0056b3;-->
+<!--        }-->
+<!--        .list-group-item {-->
+<!--            font-size: 1.2rem;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1 class="text-center">Đề xuất phim cho người dùng</h1>-->
+<!--        <form method="post" action="/">-->
+<!--            <div class="form-group">-->
+<!--                <label for="query">Nhập truy vấn tìm kiếm dựa trên mô tả:</label>-->
+<!--                <input type="text" id="query" name="query" class="form-control" required>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary btn-block">Tìm kiếm dựa trên mô tả</button>-->
+<!--        </form>-->
+
+<!--        <br>-->
+
+<!--        <form method="post" action="/search_title">-->
+<!--            <div class="form-group">-->
+<!--                <label for="title">Nhập tiêu đề phim:</label>-->
+<!--                <input type="text" id="title" name="title" class="form-control" required>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary btn-block">Tìm kiếm dựa trên tiêu đề</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Thêm Bootstrap JS và jQuery &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm phim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Đề xuất phim cho người dùng</h1>
+        <form method="post" action="/">
+            <div class="search-container">
+                <input type="text" id="query" name="query" placeholder="Nhập truy vấn tìm kiếm của bạn" required>
+                <button type="submit">Tìm kiếm</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

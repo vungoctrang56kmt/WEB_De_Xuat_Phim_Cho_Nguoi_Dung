@@ -1,0 +1,66 @@
+1. Xử lý dữ liệu:
+- Loại bỏ từ dừng (Stopwords Removal): Loại bỏ các từ không có ý nghĩa hoặc không quan trọng từ mô tả và tiêu
+  đề của các bộ phim, như "the", "is", "and",...
+- Lemmatization: Chuẩn hóa các từ về dạng gốc của chúng, giúp giảm số lượng biến thể của các từ trong dữ liệu.
+  Ví dụ: "running", "ran", "runs" được chuyển đổi thành "run".
+2. Vector hóa dữ liệu:
+- Bag-of-Words (BoW): Biểu diễn mỗi mô tả và tiêu đề của bộ phim thành một vector, trong đó mỗi phần tử của vector
+  tương ứng với tần suất xuất hiện của từ trong văn bản.
+- TF-IDF (Term Frequency-Inverse Document Frequency): Thêm trọng số cho các từ dựa trên tần suất xuất hiện của chúng
+  trong một mô tả hoặc tiêu đề cụ thể so với toàn bộ tập dữ liệu.
+3. Tính toán độ tương tự:
+- Jaccard Similarity: Đo lường độ tương tự giữa hai tập hợp dựa trên tỷ lệ phần trăm các phần tử chung.
+- Cosine Similarity: Đo lường góc giữa hai vector trong không gian đa chiều, cho biết sự tương đồng giữa chúng.
+4. Đề xuất bộ phim dựa trên tiêu đề:
+- Xác định bộ phim mục tiêu dựa trên tiêu đề đã cho.
+- Tính toán độ tương tự giữa tiêu đề của bộ phim mục tiêu và các tiêu đề khác.
+- Đề xuất các bộ phim có tiêu đề tương tự nhất.
+5. Đề xuất bộ phim dựa trên mô tả:
+- Xác định bộ phim mục tiêu dựa trên mô tả đã cho.
+- Tính toán độ tương tự giữa mô tả của bộ phim mục tiêu và các mô tả khác.
+- Đề xuất các bộ phim có mô tả tương tự nhất.
+6. In kết quả:
+- Hiển thị danh sách các bộ phim được đề xuất và thông tin liên quan (tiêu đề, mô tả) cho người dùng.
+
+7. Sử dụng mô hình spaCy
+  SpaCy là một thư viện xử lý ngôn ngữ tự nhiên (NLP) mạnh mẽ và hiệu quả cho Python. Dưới đây là cách sử dụng cơ bản của SpaCy và các công dụng chính của nó:
+
+Cách sử dụng:
+
+1. Cài đặt: Cài đặt SpaCy bằng pip: pip install spacy.
+2. Tải mô hình ngôn ngữ: Sử dụng lệnh spacy.load() để tải một mô hình ngôn ngữ cụ thể.
+   Ví dụ: nlp = spacy.load('en_core_web_sm') để tải mô hình ngôn ngữ tiếng Anh.
+3. Xử lý văn bản: Sử dụng đối tượng nlp để xử lý văn bản. Ví dụ: doc = nlp("This is a sample text.").
+4. Trích xuất thông tin: Sử dụng các thuộc tính và phương thức của đối tượng doc để trích xuất thông tin như từ vựng,
+   từ loại, cú pháp, thực thể, v.v.
+
+Công dụng:
+
+1. Tokenization: Tách văn bản thành các phần tử nhỏ hơn như từ, ký tự hoặc câu.
+2. Lemmatization: Chuẩn hóa các từ về dạng gốc của chúng.
+3. Part-of-Speech (POS) Tagging: Đánh dấu từ loại cho từng từ trong văn bản.
+4. Dependency Parsing: Phân tích cú pháp của câu để hiểu cấu trúc cú pháp của nó.
+5. Named Entity Recognition (NER): Nhận diện và phân loại các thực thể như người, địa điểm, tổ chức, v.v. trong văn bản.
+6. Word Vectors: Tạo các vector đại diện cho từ và cụm từ trong không gian vector, thường được sử dụng trong các
+   mô hình học máy dựa trên ngôn ngữ.
+7. Sentence Boundary Detection: Phát hiện ranh giới câu trong văn bản.
+-> SpaCy cung cấp một cách tiếp cận toàn diện và dễ sử dụng để xử lý ngôn ngữ tự nhiên,giúp đơn giản hóa việc phát triển
+ ứng dụng và mô hình NLP(Mô hình NLP (Natural Language Processing - Xử lý ngôn ngữ tự nhiên)
+-> Phần đánh giá mô hình.
+Đánh giá Mô hình sử dụng spaCy
+1. Chất lượng Lemmatization:
+
+- Kiểm tra thủ công: Xem xét một số kết quả lemmatization để đảm bảo rằng các từ được chuẩn hóa chính xác.
+- Đánh giá Vector Similarity: So sánh độ tương tự cosine giữa vector của văn bản gốc và văn bản lemmatized.
+  Độ tương tự cao cho thấy lemmatization không làm mất ngữ nghĩa.
+2. Hiệu quả Vector hóa:
+
+- Precision@K và Recall@K: Đánh giá độ chính xác của các phim được đề xuất so với các phim thực sự mà người dùng quan tâm.
+- MAP@K (Mean Average Precision): Đánh giá độ chính xác trung bình của các đề xuất phim.
+3. Hiệu suất Hệ thống:
+
+- SpaCy nhanh và hiệu quả cho các tác vụ NLP, giúp tăng hiệu suất xử lý văn bản.
+-> Kết luận
+ Chất lượng Lemmatization: Đảm bảo văn bản được chuẩn hóa chính xác và giữ nguyên ngữ nghĩa.
+ Hiệu quả Vector hóa: Đề xuất phim chính xác và đáng tin cậy.
+ Hiệu suất Hệ thống: Tăng tốc độ và hiệu quả xử lý văn bản.

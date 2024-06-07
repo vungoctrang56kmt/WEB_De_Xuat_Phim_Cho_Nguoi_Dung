@@ -1,0 +1,98 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Kết quả tìm kiếm</title>-->
+<!--    &lt;!&ndash; Thêm Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Thêm custom CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            padding-top: 40px;-->
+<!--        }-->
+<!--        .container {-->
+<!--            max-width: 800px;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            margin-bottom: 30px;-->
+<!--        }-->
+<!--        .btn-primary {-->
+<!--            background-color: #007bff;-->
+<!--            border: none;-->
+<!--        }-->
+<!--        .btn-primary:hover {-->
+<!--            background-color: #0056b3;-->
+<!--        }-->
+<!--        .list-group-item {-->
+<!--            font-size: 1.2rem;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1 class="text-center">Kết quả tìm kiếm cho "{{ query }}"</h1>-->
+<!--        <ul class="list-group">-->
+<!--            {% for title in results %}-->
+<!--                <li class="list-group-item">{{ title }}</li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--        <a href="/" class="btn btn-primary btn-block mt-4">Tìm kiếm mới</a>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Thêm form tìm kiếm theo tiêu đề &ndash;&gt;-->
+<!--    <div class="container mt-5">-->
+<!--        <h2 class="text-center">Tìm kiếm theo tiêu đề</h2>-->
+<!--        <form method="post" action="/search_title">-->
+<!--            <div class="form-group">-->
+<!--                <label for="title_query">Nhập tiêu đề phim:</label>-->
+<!--                <input type="text" id="title_query" name="query" class="form-control" required>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary btn-block">Tìm kiếm</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Thêm Bootstrap JS và jQuery &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Kết quả tìm kiếm</title>-->
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Kết quả tìm kiếm</h1>-->
+<!--    <p>Kết quả cho truy vấn "{{ query }}":</p>-->
+<!--    <ul>-->
+<!--        {% for movie in results %}-->
+<!--            <li>{{ movie }}</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả tìm kiếm</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Kết quả tìm kiếm</h1>
+    <p>Kết quả cho truy vấn "{{ query }}":</p>
+    <ul>
+        {% for movie in results %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Quay lại trang chính</a>  <!-- Thêm nút back -->
+</body>
+</html>
